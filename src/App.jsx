@@ -2,7 +2,7 @@ import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import { Navbar } from '../components/common/Navbar';
-import { Button } from './../components/common/Button';
+import { Button } from '../components/common/Button';
 import { Card } from '../components/common/Card';
 import { Input } from '../components/common/Input';
 import { Select } from '../components/common/Select';
@@ -17,7 +17,6 @@ import MemberInfo from '../components/members/MemberInfo';
 function App() {
   return (
     <>
-      {/* Common UI Components */}
       <Navbar />
       <Card />
       <Button />
