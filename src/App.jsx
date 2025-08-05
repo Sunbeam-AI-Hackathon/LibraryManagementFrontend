@@ -14,8 +14,8 @@ import { Filter } from '../components/common/Filter';
 
 
 function App() {
- 
   return (
+  
    <>
      <Navbar/> 
      <Card/> 
@@ -47,4 +47,5 @@ function App() {
   )
 }
 
-export default App
+export default App;
+  
