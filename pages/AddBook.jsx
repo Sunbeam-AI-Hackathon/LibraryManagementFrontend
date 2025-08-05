@@ -1,19 +1,22 @@
+
 import React, { useState } from 'react';
 import {Navbar} from '../components/common/Navbar';
 import {Input} from '../components/common/Input';
 import {Select} from '../components/common/Select';
 import {Button} from '../components/common/Button';
-import {Card} from '../components/common/Card';
 
-// EditBook Page
-export function EditBook() {
+
+// AddBook Page
+export function AddBook() {
   const [formData, setFormData] = useState({
-    title: "Clean Code: A Handbook of Agile Software Craftsmanship",
-    author: "Robert C. Martin",
-    subject: "programming",
-    isbn: "978-0132350884",
-    price: "2499",
-    description: "Even bad code can function. But if code isn't clean, it can bring a development organization to its knees.",
+    title: "",
+    author: "",
+    subject: "",
+    isbn: "",
+    price: "",
+    description: "",
+    copies: "",
+    rack: "",
   });
 
   const handleChange = (e) => {
@@ -26,15 +29,14 @@ export function EditBook() {
     <div className="min-h-screen bg-gray-100">
       <Navbar />
       <div className="p-6 max-w-md mx-auto">
-        <h2 className="text-2xl font-bold mb-4">Edit Book</h2>
-        <p className="text-gray-600 mb-4">Modify existing book information</p>
-        <p className="text-sm text-gray-600 mb-6">Book ID: #001 | Currently has 5 copies (3 available, 2 issued)</p>
+        <h2 className="text-2xl font-bold mb-4">Add New Book</h2>
+        <p className="text-gray-600 mb-6">Register a new book title in the library system</p>
         <Input
           label="Book Title"
           name="title"
           value={formData.title}
           onChange={handleChange}
-          placeholder="Enter the complete book title"
+          placeholder="Enter the full title as it appears on the book cover"
           required
         />
         <Input
@@ -79,16 +81,30 @@ export function EditBook() {
           name="description"
           value={formData.description}
           onChange={handleChange}
-          placeholder="Optional book summary or description"
+          placeholder="Optional book summary or description for library records"
         />
-        <div className="grid grid-cols-3 gap-4 mb-6">
-          <Card title="Total Copies" value="5" />
-          <Card title="Available" value="3" />
-          <Card title="Currently Issued" value="2" />
-        </div>
+        <h3 className="text-lg font-semibold mb-2">Initial Copies</h3>
+        <Input
+          label="Number of Copies"
+          name="copies"
+          value={formData.copies}
+          onChange={handleChange}
+          placeholder="How many physical copies to add (1-20)"
+        />
+        <Select
+          label="Default Rack Location"
+          name="rack"
+          value={formData.rack}
+          onChange={handleChange}
+          options={[
+            { value: "rack1", label: "Rack 1" },
+            { value: "rack2", label: "Rack 2" },
+            { value: "rack3", label: "Rack 3" },
+          ]}
+          placeholder="Select Rack"
+        />
         <div className="flex space-x-2 mt-4">
-          <Button onClick={handleSubmit}>Update Book Information</Button>
-          <Button onClick={() => {}}>Manage Copies</Button>
+          <Button onClick={handleSubmit}>Add Book to Library</Button>
           <Button variant="secondary" onClick={() => {}}>Cancel</Button>
         </div>
       </div>
