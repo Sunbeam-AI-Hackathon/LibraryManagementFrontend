@@ -1,6 +1,7 @@
 
 import { SearchBar } from "./SearchBar"; // <-- Adjust path based on where SearchBar.jsx is located
 import { Button } from "./Button";
+import { Select } from "./Select";
 
 export function Filter({ filters = [], onApply = () => {}, onReset = () => {} }) {
   return (
