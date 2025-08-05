@@ -11,6 +11,14 @@ import { Input } from '../components/common/Input';
 import { Select } from '../components/common/Select';
 import { SearchBar } from '../components/common/SearchBar';
 import { Filter } from '../components/common/Filter';
+import AddMember from '../pages/AddMember';
+import AddBookCopy from '../pages/AddBookCopy';
+import CollectPayment from '../pages/CollectPayment';
+import BookCopiesManagement from '../pages/BookCopiesManagement';
+import TransactionTable from '../components/transactions/TransactionTable';
+import MemberPaymentStatus from '../pages/MemberPaymentStatus';
+import OverdueBooks from '../pages/OverdueBooks';
+import PaymentReport from '../pages/PaymentReport';
 
 
 function App() {
@@ -40,8 +48,7 @@ function App() {
     }
   ]}
 />
-
-
+<PaymentReport/>
    </>
 
   )
